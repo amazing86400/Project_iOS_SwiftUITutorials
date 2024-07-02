@@ -1,0 +1,37 @@
+//
+//  Landmark.swift
+//  SwiftUITutorials
+//
+//  Created by KIBEOM SHIN on 7/2/24.
+//
+
+import Foundation
+import SwiftUI
+import CoreLocation
+
+//MARK: 랜드마크 데이터 정의
+struct Landmark: Hashable, Codable, Identifiable {
+    var id: Int
+    var name: String
+    var park: String
+    var state: String
+    var description: String
+    
+    private var imageName: String // image 프로퍼티에 사용할 변수로, private로 설정
+    var image: Image {
+        Image(imageName)
+    }
+    
+    private var coordinates: Coordinates
+    var locationCoordinate: CLLocationCoordinate2D {
+        CLLocationCoordinate2D(
+            latitude: coordinates.latitude,
+            longitude: coordinates.longitude
+        )
+    }
+    
+    struct Coordinates: Hashable, Codable {
+        var latitude: Double
+        var longitude: Double
+    }
+}
