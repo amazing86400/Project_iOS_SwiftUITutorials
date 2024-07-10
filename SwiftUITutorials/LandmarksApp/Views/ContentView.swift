@@ -7,12 +7,14 @@
 
 import SwiftUI
 
+
 struct ContentView: View {
     var body: some View {
-        LandmarkDetail(landmark: landmarks[0])
+        LandmarkList()
     }
 }
 
 #Preview {
     ContentView()
+        .environment(ModelData())
 }
