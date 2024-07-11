@@ -13,6 +13,7 @@ class ModelData {
     //MARK: JSON 데이터 가져오기
     // 인스턴스화
     var landmarks: [Landmark] = load("landmarkData.json")
+    var hikes: [Hike] = load("hikeData.json")
 }
 
 
